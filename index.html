@@ -1,54 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
-  <script src="script.js" defer></script>
-  
-  <title>Frontend Mentor | Tip calculator app</title>
-  
-</head>
-<body>
-  <main>
-    <h1>Splitter</h1>
-    <section class="container">
-      
-  <h2>Bill</h2>
-  <div>
-  <span>$</span>
-  <span>0</span>
-  </div>
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+    <script src="script.js" defer></script>
 
-  Number of People
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main>
+      <img src="images/logo.svg" alt="Logo Splitter" class="logo" />
 
-  Tip Amount
-  / person
+      <section class="calculator">
+        <article class="calc-content">
+          <form action="form-calculator" id="form" novalidate>
 
-  Total
-  / person
+            <label for="bill">Bill</label>
+            <input type="number" name="bill" id="bill" placeholder="0"/>
 
-  Reset
-</section>
-</main>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            <div class="tip-select">
+              <label for="number-custom">Select Tip %</label>
+              <div class="tip">
+                <button class="btn" type="button" value="0.05">5%</button>
+                <button class="btn" type="button" value="0.1">10%</button>
+                <button class="btn" type="button" value="0.15">15%</button>
+                <button class="btn" type="button" value="0.25">25%</button>
+                <button class="btn" type="button" value="0.5">50%</button>
+                <input
+                  id="number-custom"
+                  type="number"
+                  name="tip"
+                  value=""
+                  placeholder="Custom"
+                />
+              </div>
+            </div>
+
+            <label for="number-people">Number of People</label>
+            <span class="error"></span>
+            <input type="number" name="number-people" id="number-people" placeholder="0" />
+            
+          </form>
+        </article>
+
+        <article class="result">
+          <div class="result-content">
+            <div class="result-text">
+              <h3>Tip Amount</h3>
+              <p>/ person</p>
+            </div>
+            <span id="amount">$0.00</span>
+          </div>
+
+          <div class="result-content">
+            <div class="result-text">
+              <h3>Total</h3>
+              <p>/ person</p>
+            </div>
+            <span id="total">$0.00</span>
+          </div>
+
+          <button type="reset" id="reset">Reset</button>
+        </article>
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Leonardo Amaral</a>.
+    </div>
+  </body>
 </html>

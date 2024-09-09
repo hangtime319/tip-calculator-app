@@ -1,6 +1,7 @@
 /* COLORS */
 :root {
   --strong-cyan: hsl(172, 67%, 45%);
+  --strong-cyan-active: hsl(172, 83%, 65%);
   --very-dark-cyan: hsl(183, 100%, 15%);
   --dark-grayish-cyan: hsl(186, 14%, 43%);
   --grayish-cyan: hsl(184, 14%, 56%);
@@ -16,10 +17,221 @@
   box-sizing: border-box;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  color: var(--very-dark-cyan);
+  background-color: var(--very-light-grayish-cyan);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em;
+  text-align: right;
+  width: 100%;
+}
+
+input:focus {
+  outline-color: var(--strong-cyan);
+}
+
+input, button {
+  cursor: pointer;
+}
+
 /* GENERAL */
 body {
   font-size: 24px;
-  font-family: "Space Mono", sans-serif;
+  font-family: "Space Mono", monospace;
+  background-color: var(--light-grayish-cyan);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.logo {
+  margin-bottom: 1.6em;
+}
+
+.calculator {
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1em;
+  border-radius: 15px;
+  width: 900px;
+}
+
+.calc-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 1em;
+}
+
+#form label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--grayish-cyan);
+}
+
+#bill {
+  background-image: url("images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 0.5em;
+  border-radius: 5px;
+  margin-top: 0.5em;
+  padding: 0.5em;
+  width: 100%;
+  text-align: right;
+}
+
+.tip-select {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0;
+}
+
+.tip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+  margin-top: 0.5em;
+}
+
+.btn {
+  display: block;
+  background-color: var(--very-dark-cyan);
+  font-family: "Space Mono", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  border-radius: 5px;
+  padding: 0.5em 1.8em;
+  border: none;
+}
+
+.active {
+  background-color: var(--strong-cyan-active);
+  color: var(--very-dark-cyan);
+}
+
+.btn:hover,
+button[type="reset"]:hover {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+#number-custom::placeholder {
+  margin-right: 1.5em;
+}
+
+#number-people {
+  background-image: url("images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 0.5em;
+  margin-top: 0.3em;
+  width: 100%;
+}
+
+#number-people::placeholder,
+#bill::placeholder {
+  color: var(--grayish-cyan);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--very-dark-cyan);
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.result-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.result-text h3 {
+  font-size: 0.8rem;
+  color: var(--white);
+}
+
+.result-text p {
+  font-size: 0.5rem;
+  color: var(--grayish-cyan);
+}
+
+#amount,
+#total {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--strong-cyan);
+}
+
+button[type="reset"] {
+  background-color: var(--strong-cyan);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em;
+  margin-top: 10em;
+  color: var(--very-dark-cyan);
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.error {
+  font-size: 0.575rem;
+  font-weight: 700;
+  color: red;
+  margin-left: 15em;
+}
+
+@media (max-width: 475px) {
+  main {
+    height: 100%;
+  }
+  .logo {
+    margin: 1.6em auto;
+  }
+  .calculator {
+    grid-template-columns: 1fr;
+    gap: 1em;
+    width: 100%;
+  }
+  .calc-content {
+    margin-right: 0;
+  }
+  .tip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #number-custom::placeholder {
+    text-align: center;
+    margin-right: 0.5em;
+  }
+  .result {
+    max-height: 12em;
+  }
+  .result-content {
+    align-items: flex-end;
+    margin: 0 0 1em 0;
+  }
+  button[type='reset'] {
+    margin-top: 1em;
+  }
 }
 
 .attribution {
