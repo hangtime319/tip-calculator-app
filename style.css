@@ -132,7 +132,7 @@ button[type="reset"]:hover {
 }
 
 #number-custom::placeholder {
-  margin-right: 1.5em;
+  text-align: center;
 }
 
 #number-people {
