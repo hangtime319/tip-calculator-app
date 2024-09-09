@@ -162,7 +162,7 @@ button[type="reset"]:hover {
   margin-top: 1em;
 }
 
-.result-text h3 {
+.result-text h2 {
   font-size: 0.8rem;
   color: var(--white);
 }
